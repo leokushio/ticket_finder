@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
-import 'package:ticket_finder/screens/search_screen_bottomsheet/search_screen.dart';
 
 class TicketSearchBox extends StatelessWidget {
   TicketSearchBox({
@@ -18,6 +17,7 @@ class TicketSearchBox extends StatelessWidget {
     required this.showLeftBackButton,
     required this.whereToAutoFocus,
     required this.whereToReadOnly,
+    required this.isHomeScreen,
   });
    void Function()? onTap = (){};
    final bool onEditingComplete;
@@ -28,9 +28,7 @@ class TicketSearchBox extends StatelessWidget {
    final bool showLeftBackButton;
    final bool whereToAutoFocus;
    final bool whereToReadOnly;
-
-  //  static TextEditingController whereFromController = TextEditingController();
-  //  static TextEditingController whereToController = TextEditingController();
+   final bool isHomeScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,7 @@ class TicketSearchBox extends StatelessWidget {
       height: 120,
       padding: const EdgeInsets.all(XSizes.md),
       decoration: BoxDecoration(
-        color: XColors.grey3,
+        color: isHomeScreen ? XColors.grey4 : XColors.grey3,
         borderRadius: BorderRadius.circular(XSizes.defaultRadius),
     ),
     child: Row(
@@ -57,9 +55,12 @@ class TicketSearchBox extends StatelessWidget {
         ),
         // -- back
         if(showLeftBackButton)
-        const Padding(
-          padding: EdgeInsets.only(right: XSizes.md),
-          child: Icon(CupertinoIcons.arrow_left),
+        Padding(
+          padding: const EdgeInsets.only(right: XSizes.md),
+          child: IconButton(
+            onPressed: ()=> searchProvider.goToHomeScreen(),
+            icon: const Icon(CupertinoIcons.arrow_left)
+            ),
         ),
 
         Expanded(
@@ -80,10 +81,10 @@ class TicketSearchBox extends StatelessWidget {
                   isDense: true,
                   hintText: 'Откуда - Москва',
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: const EdgeInsets.all(5),
                    suffixIcon: showSurfixSwapIcon ? IconButton(
                     onPressed: () => context.read<SearchProvider>().swapDestination(), 
-                    icon: Icon(Icons.swap_vert),
+                    icon: const Icon(Icons.swap_vert),
                   
                     )
                     : null,
@@ -91,7 +92,7 @@ class TicketSearchBox extends StatelessWidget {
                 ),
               ),          
               
-              const Divider(thickness: 1, color: Colors.grey,),
+              const Divider(thickness: 1, color: XColors.grey6,),
 
               // -- Where To ----------------------------
               TextFormField(
@@ -120,10 +121,10 @@ class TicketSearchBox extends StatelessWidget {
                   isDense: true,
                   hintText: 'Куда - Турция',
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: const EdgeInsets.all(5),
                   suffixIcon: showSurfixClearIcon ? IconButton(
                     onPressed: () => context.read<SearchProvider>().clearWhereTo(), 
-                    icon: Icon(Icons.clear),
+                    icon: const Icon(Icons.clear),
                   
                     )
                     : null,

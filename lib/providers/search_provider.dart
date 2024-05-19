@@ -37,6 +37,10 @@ class SearchProvider extends ChangeNotifier {
     subScreenIndex = 2;
     notifyListeners();
   }
+  void goToHomeScreen () {
+    subScreenIndex = 0;
+    notifyListeners();
+  }
 
   void readOnlyFalse () {
     readOnly = false;

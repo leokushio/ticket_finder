@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
@@ -39,6 +38,7 @@ class _PickCountryScreenState extends State<PickCountryScreen> {
           whereToAutoFocus: false,
           whereToReadOnly: true,
           onEditingComplete: false,
+          isHomeScreen: false,
         ),
         const SizedBox(height: XSizes.spaceBtwItems *2,),
 

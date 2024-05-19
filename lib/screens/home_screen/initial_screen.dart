@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
@@ -63,13 +64,14 @@ class InitialScreen extends StatelessWidget {
               whereToAutoFocus: false,
               whereToReadOnly: false,
               onEditingComplete: true,
+              isHomeScreen: true,
             ),
           )
           ),
         const SizedBox(height: XSizes.spaceBtwSections,),
     
         // -- Title
-        Container(
+        SizedBox(
           width: double.infinity,
           child: Text('Музыкально отлететь', style: Theme.of(context).textTheme.headlineLarge,)
           ),
