@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
 
 class TicketOffersSection extends StatelessWidget {
@@ -25,7 +26,7 @@ class TicketOffersSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('Прямые рельсы', style: Theme.of(context).textTheme.titleLarge,),
+            Text(XTexts.directFlights, style: Theme.of(context).textTheme.titleLarge,),
 
             ListView.builder(
               itemCount: providerAPI.ticketOfferModel.ticketsOffers.length,

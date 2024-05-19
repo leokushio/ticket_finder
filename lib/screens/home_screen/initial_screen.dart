@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 import 'package:ticket_finder/screens/common_widgets/ticket_searchbox.dart';
@@ -25,9 +25,12 @@ class InitialScreen extends StatelessWidget {
       children: [
     
         // -- Heading -- 
-        const SizedBox(height: XSizes.spaceBtwSections,),
-        Text('Поиск Дешевых', style: Theme.of(context).textTheme.titleLarge,),
-        Text('авиабилетов', style: Theme.of(context).textTheme.titleLarge,),
+        const SizedBox(height: XSizes.spaceBtwSections *2,),
+        Text(
+          XTexts.homeScreenTitle, 
+          style: Theme.of(context).textTheme.titleLarge,
+          textAlign: TextAlign.center,
+          ),
         const SizedBox(height: XSizes.spaceBtwSections,),
         
         // -- Search Box
@@ -73,7 +76,7 @@ class InitialScreen extends StatelessWidget {
         // -- Title
         SizedBox(
           width: double.infinity,
-          child: Text('Музыкально отлететь', style: Theme.of(context).textTheme.headlineLarge,)
+          child: Text(XTexts.muzikalnoOtletet, style: Theme.of(context).textTheme.headlineLarge,)
           ),
         const SizedBox(height: XSizes.defaultSpace,),
     

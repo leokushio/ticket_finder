@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 
 class TicketSearchBox extends StatelessWidget {
@@ -79,7 +80,7 @@ class TicketSearchBox extends StatelessWidget {
                   ) : null,
                   prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
-                  hintText: 'Откуда - Москва',
+                  hintText: XTexts.whereFromHint,
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.all(5),
                    suffixIcon: showSurfixSwapIcon ? IconButton(
@@ -119,7 +120,7 @@ class TicketSearchBox extends StatelessWidget {
                   ) : null,
                   prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
-                  hintText: 'Куда - Турция',
+                  hintText: XTexts.whereToHint,
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.all(5),
                   suffixIcon: showSurfixClearIcon ? IconButton(

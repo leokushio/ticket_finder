@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 import 'package:ticket_finder/screens/common_widgets/ticket_searchbox.dart';
-import 'package:ticket_finder/screens/home_screen/widgets/ticket_offers_section.dart';
+import 'package:ticket_finder/screens/pick_country_screen/widgets/ticket_offers_section.dart';
 import 'package:ticket_finder/screens/pick_country_screen/widgets/chips.dart';
 
 class PickCountryScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _PickCountryScreenState extends State<PickCountryScreen> {
     final searchProvider = Provider.of<SearchProvider>(context);
     return Column(
       children: [
-        const SizedBox(height: XSizes.spaceBtwSections,),
+        const SizedBox(height: XSizes.spaceBtwSections *2,),
 
         // -- Search Box -- 
         TicketSearchBox(
@@ -56,7 +57,7 @@ class _PickCountryScreenState extends State<PickCountryScreen> {
           width: double.infinity,
           child: ElevatedButton(
             onPressed: () => context.read<SearchProvider>().goToAllTicketsScreen(), 
-            child: const Text('Посмотреть все билеты')
+            child: const Text(XTexts.seeAllTickets)
             ),
         )
       ],

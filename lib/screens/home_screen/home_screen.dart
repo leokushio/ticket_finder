@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
     
 
     return Scaffold(
+      // -- MAIN SCREEN --
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: XSizes.lg, right: XSizes.lg),

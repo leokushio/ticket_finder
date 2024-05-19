@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 
 class XChips extends StatelessWidget {
@@ -23,7 +24,7 @@ class XChips extends StatelessWidget {
             child: Chip(
               labelStyle: Theme.of(context).textTheme.displaySmall,
               label: Text(
-                searchProvider.returnDate == null ? 'обратно'
+                searchProvider.returnDate == null ? XTexts.obratno
                 : DateFormat('dd MMM, EEE', 'ru').format(searchProvider.returnDate!)
                 ), 
               avatar: const Icon(Icons.add), 
@@ -36,8 +37,7 @@ class XChips extends StatelessWidget {
             onTap: () => context.read<SearchProvider>().showDepatureDatePicker(context),
             child: Chip(
               labelStyle: Theme.of(context).textTheme.displaySmall,
-              label: Text(DateFormat('dd MMM, EEE', 'ru').format(searchProvider.depatureDate)), 
-              // avatar: Icon(Icons.add), 
+              label: Text(DateFormat('dd MMM, EEE', 'ru').format(searchProvider.depatureDate)),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             ),
           ),
@@ -47,7 +47,7 @@ class XChips extends StatelessWidget {
             onTap: (){},
             child: Chip(
               labelStyle: Theme.of(context).textTheme.displaySmall,
-              label: const Text('1,эконом'), 
+              label: const Text(XTexts.econom), 
               avatar: const Icon(Icons.person), 
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             ),
@@ -57,7 +57,8 @@ class XChips extends StatelessWidget {
           GestureDetector(
             onTap: (){},
             child: Chip(
-              label: const Text('обратно'), 
+              labelStyle: Theme.of(context).textTheme.displaySmall,
+              label: const Text(XTexts.filters), 
               avatar: const Icon(Icons.tune), 
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             ),
