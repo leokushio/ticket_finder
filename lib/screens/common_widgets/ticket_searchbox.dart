@@ -71,7 +71,17 @@ class TicketSearchBox extends StatelessWidget {
             children: [
               // -- Where From ----------------------------------------
               TextFormField(   
-                controller: searchProvider.whereFromController,              
+                controller: searchProvider.whereFromController, 
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  final RegExp russian = RegExp(r'^[\u0400-\u04FF]+');
+                  if (russian.hasMatch(value!) || searchProvider.whereFromController.text.isEmpty ){
+                    return null;
+                  } else {
+                    return 'По Русский';
+                  }
+                },
+                onChanged: (String whereFrom) => searchProvider.saveToPrefs(whereFrom),             
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
                   prefixIcon: showPrefixIcons ? const Padding(

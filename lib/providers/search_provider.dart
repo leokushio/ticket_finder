@@ -1,12 +1,17 @@
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchProvider extends ChangeNotifier {
+
+  Future<SharedPreferences> prefs = SharedPreferences.getInstance();
+  SharedPreferences? currentPref;
 
   TextEditingController whereFromController = TextEditingController();
   TextEditingController whereToController = TextEditingController();
 
   int subScreenIndex = 0;
+  int currentPageIndex = 0;
 
   FocusNode whereToFocusNode = FocusNode();
 
@@ -16,6 +21,21 @@ class SearchProvider extends ChangeNotifier {
   DateTime depatureDate = DateTime.now();
   DateTime? returnDate;
 
+  Future<void> initializePrefs() async{
+    SharedPreferences currentPref = await prefs; 
+    
+    if (currentPref.getString('savedDepatureLocation') != null){
+      whereFromController.text = currentPref.getString('savedDepatureLocation')!;
+    } else {
+      whereFromController.text = '';
+    }
+  }
+
+  Future<void> saveToPrefs(String whereFrom) async{
+    SharedPreferences currentPref = await prefs;
+    currentPref.setString('savedDepatureLocation', whereFrom);
+  } 
+  
   void focusOn (context) {
     FocusScope.of(context).requestFocus(whereToFocusNode);
   }
@@ -26,6 +46,10 @@ class SearchProvider extends ChangeNotifier {
   }
   void clearWhereTo () {
     whereToController.clear();
+    notifyListeners();
+  }
+  void changePage (int index) {
+    currentPageIndex = index;
     notifyListeners();
   }
 
@@ -77,4 +101,5 @@ class SearchProvider extends ChangeNotifier {
         notifyListeners();
         });
   }
+
 }
