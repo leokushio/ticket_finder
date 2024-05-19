@@ -16,7 +16,7 @@ class TicketOffersSection extends StatelessWidget {
     return Container(
       // height: 500,
       decoration: BoxDecoration(
-        color: XColors.grey2,
+        color: XColors.grey1,
         borderRadius: BorderRadius.circular(XSizes.defaultRadius)
       ),
       child: Padding( 

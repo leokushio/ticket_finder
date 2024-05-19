@@ -43,7 +43,7 @@ class TicketSearchBox extends StatelessWidget {
       height: 120,
       padding: const EdgeInsets.all(XSizes.md),
       decoration: BoxDecoration(
-        color: XColors.grey4,
+        color: XColors.grey3,
         borderRadius: BorderRadius.circular(XSizes.defaultRadius),
     ),
     child: Row(

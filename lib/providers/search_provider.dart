@@ -33,6 +33,10 @@ class SearchProvider extends ChangeNotifier {
     subScreenIndex = 1;
     notifyListeners();
   }
+  void goToAllTicketsScreen () {
+    subScreenIndex = 2;
+    notifyListeners();
+  }
 
   void readOnlyFalse () {
     readOnly = false;

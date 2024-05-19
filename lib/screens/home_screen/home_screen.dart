@@ -12,10 +12,11 @@ import 'package:ticket_finder/models/api/offers_model.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 import 'package:ticket_finder/screens/home_screen/initial_screen.dart';
-import 'package:ticket_finder/screens/home_screen/pick_country_screen.dart';
+import 'package:ticket_finder/screens/pick_country_screen/pick_country_screen.dart';
 import 'package:ticket_finder/screens/home_screen/widgets/offers_section.dart';
 import 'package:ticket_finder/screens/common_widgets/ticket_searchbox.dart';
 import 'package:ticket_finder/screens/search_screen_bottomsheet/search_screen.dart';
+import 'package:ticket_finder/screens/see_all_tickets_screen/see_all_tickets_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,7 @@ class HomeScreen extends StatelessWidget {
     final subScreens = [
       const InitialScreen(),
       const PickCountryScreen(),
+      const SeeAllTicketsScreen(),
     ];
 
     final searchProvider = Provider.of<SearchProvider>(context);

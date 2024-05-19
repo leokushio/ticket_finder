@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_finder/constants/colors.dart';
 
 class XTextTheme {
   
@@ -19,6 +20,7 @@ class XTextTheme {
     labelMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal,color: Colors.white.withOpacity(0.5)),
 
     displaySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal,color: Colors.white, fontStyle: FontStyle.italic),
+    displayMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal,color: XColors.grey6, fontStyle: FontStyle.italic),
     
   );
 }
