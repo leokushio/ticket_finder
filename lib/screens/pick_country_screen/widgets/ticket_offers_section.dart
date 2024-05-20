@@ -1,5 +1,7 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
@@ -35,7 +37,7 @@ class TicketOffersSection extends StatelessWidget {
               itemBuilder: (context, val) {
                 String subtitle = providerAPI.ticketOfferModel.ticketsOffers[val].timeRange
                         .toString().replaceAll('[', '').replaceAll(']', '').replaceAll(',', ' ');
-                String price = providerAPI.ticketOfferModel.ticketsOffers[val].price.value.toString();
+                int price = providerAPI.ticketOfferModel.ticketsOffers[val].price.value;
                 String title = providerAPI.ticketOfferModel.ticketsOffers[val].title;
                         
                 return Column(
@@ -49,7 +51,14 @@ class TicketOffersSection extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(title, style: Theme.of(context).textTheme.displaySmall,),
-                        Text("${price[0]} ${price.substring(1)} ₽ >", style: Theme.of(context).textTheme.displaySmall!.copyWith(color: XColors.blue),),
+                        Row(
+                          children: [
+                            Text(
+                              '${NumberFormat.decimalPatternDigits(decimalDigits: 0).format(price).replaceAll(',', ' ')} ${XTexts.ruble}', 
+                              style: Theme.of(context).textTheme.displaySmall!.copyWith(color: XColors.blue),),
+                            const Icon(CupertinoIcons.right_chevron, size: XSizes.md, color: XColors.blue,)
+                          ],
+                        ),
                       ],
                     ),
                     subtitle: Text(

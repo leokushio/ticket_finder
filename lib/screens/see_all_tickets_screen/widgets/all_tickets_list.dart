@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
 
 class AllTicketsList extends StatelessWidget {
@@ -25,7 +26,7 @@ class AllTicketsList extends StatelessWidget {
         Duration travelTime = arival.difference(depature);
         String? badge = providerAPI.allTicketsModel.tickets[val].badge;
         bool hasTransfer = providerAPI.allTicketsModel.tickets[val].hasTransfer;
-        String price =providerAPI.allTicketsModel.tickets[val].price.value.toString();
+        int price =providerAPI.allTicketsModel.tickets[val].price.value;
     
         return Padding(
           padding: const EdgeInsets.only(bottom: XSizes.defaultSpace),
@@ -51,7 +52,7 @@ class AllTicketsList extends StatelessWidget {
                   children: [
                     Text(
                       style: Theme.of(context).textTheme.headlineLarge,
-                      '${price[0]} ${price.substring(1)} ₽',
+                      '${NumberFormat.decimalPatternDigits(decimalDigits: 0).format(price).replaceAll(',', ' ')} ${XTexts.ruble}',
                       ),
                     // const SizedBox(height: XSizes.spaceBtwItems,),
                     ListTile(

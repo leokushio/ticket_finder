@@ -1,5 +1,8 @@
 class XTexts {
 
+  // Ruble
+  static const String ruble = '₽';
+
   // Home Screen
   static const String homeScreenTitle = 'Поиск Дешевых\n авиабилетов';
   static const String muzikalnoOtletet = 'Музыкально отлететь';

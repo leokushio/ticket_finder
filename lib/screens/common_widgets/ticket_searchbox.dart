@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/colors.dart';
+import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
@@ -39,7 +40,7 @@ class TicketSearchBox extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      height: 120,
+      // height: 120,
       padding: const EdgeInsets.all(XSizes.md),
       decoration: BoxDecoration(
         color: isHomeScreen ? XColors.grey4 : XColors.grey3,
@@ -50,9 +51,9 @@ class TicketSearchBox extends StatelessWidget {
 
         // -- Left ICON Button -- Search
         if(showLeftSearchIcon)
-        const Padding(
-          padding: EdgeInsets.only(right: XSizes.md),
-          child: Icon(CupertinoIcons.search),
+        Padding(
+          padding: const EdgeInsets.only(right: XSizes.md),
+          child: ImageIcon(Image.asset(XImages.searchGlass).image),
         ),
         // -- back
         if(showLeftBackButton)
@@ -84,11 +85,11 @@ class TicketSearchBox extends StatelessWidget {
                 onChanged: (String whereFrom) => searchProvider.saveToPrefs(whereFrom),             
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
-                  prefixIcon: showPrefixIcons ? const Padding(
-                    padding: EdgeInsets.only(bottom: 10, right: 25),
-                    child: Icon(CupertinoIcons.airplane),
+                  prefixIcon: showPrefixIcons ? Padding(
+                    padding: const EdgeInsets.only(bottom: 10, right: 25),
+                    child: ImageIcon(Image.asset(XImages.flight).image),
                   ) : null,
-                  prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
+                  // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
                   hintText: XTexts.whereFromHint,
                   border: InputBorder.none,
@@ -121,14 +122,23 @@ class TicketSearchBox extends StatelessWidget {
                   
                 },
                 controller: searchProvider.whereToController,
+                autovalidateMode: AutovalidateMode.always,
+                validator: (value) {
+                  final RegExp russian = RegExp(r'^[\u0400-\u04FF]+');
+                  if (russian.hasMatch(value!) || searchProvider.whereToController.text.isEmpty ){
+                    return null;
+                  } else {
+                    return 'По Русский';
+                  }
+                },
                                 
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
-                 prefixIcon: showPrefixIcons ? const Padding(
+                 prefixIcon: showPrefixIcons ? Padding(
                     padding: EdgeInsets.only(bottom: 10, right: 25),
-                    child: Icon(CupertinoIcons.search),
+                    child: ImageIcon(Image.asset(XImages.searchGlass).image),
                   ) : null,
-                  prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
+                  // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
                   hintText: XTexts.whereToHint,
                   border: InputBorder.none,
