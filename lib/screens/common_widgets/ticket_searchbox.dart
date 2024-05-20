@@ -136,7 +136,7 @@ class TicketSearchBox extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
                  prefixIcon: showPrefixIcons ? Padding(
-                    padding: EdgeInsets.only(bottom: 10, right: 25),
+                    padding: const EdgeInsets.only(bottom: 10, right: 25),
                     child: ImageIcon(Image.asset(XImages.searchGlass).image),
                   ) : null,
                   // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
