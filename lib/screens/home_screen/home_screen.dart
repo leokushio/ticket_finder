@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
+import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 import 'package:ticket_finder/screens/empty_pages/discover_page.dart';
 import 'package:ticket_finder/screens/empty_pages/hotels_page.dart';
@@ -53,11 +55,11 @@ class HomeScreen extends StatelessWidget {
         selectedItemColor: Colors.blue,
         showUnselectedLabels: true,
         items: [
-          BottomNavigationBarItem(icon: ImageIcon(Image.asset(XImages.plane).image), label: 'АвиаБилеты'),
-          BottomNavigationBarItem(icon: ImageIcon(Image.asset(XImages.hotel).image), label: 'Отели'),
-          BottomNavigationBarItem(icon: ImageIcon(Image.asset(XImages.discover).image), label: 'Короче'),
-          BottomNavigationBarItem(icon: ImageIcon(Image.asset(XImages.bell).image), label: 'Подписки'),
-          BottomNavigationBarItem(icon: ImageIcon(Image.asset(XImages.profile).image), label: 'Профиль'),
+          BottomNavigationBarItem(icon: Icon(CustomIcons.plane_nav, size: XSizes.lg,), label: 'АвиаБилеты'),
+          BottomNavigationBarItem(icon: Icon(Icons.bed, size: XSizes.lg,), label: 'Отели'),
+          BottomNavigationBarItem(icon: Icon(CustomIcons.discover_nav, size: XSizes.lg,), label: 'Короче'),
+          BottomNavigationBarItem(icon: Icon(CustomIcons.bell_nav, size: XSizes.lg,), label: 'Подписки'),
+          BottomNavigationBarItem(icon: Icon(CustomIcons.profile_nav, size: XSizes.lg,), label: 'Профиль'),
         ]
         ),
 

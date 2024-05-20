@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
+import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
 
 class OffersSection extends StatelessWidget {
@@ -48,7 +49,7 @@ class OffersSection extends StatelessWidget {
                 const SizedBox(height: XSizes.spaceBtwItems,),
                 Row(
                   children: [
-                    ImageIcon(Image.asset(XImages.plane).image),
+                    Icon(CustomIcons.plane_nav),
                     // Text(price.length > 3? ' ${price[0]} ${price.substring(1)} ${XTexts.ruble}'),
                     Text('${NumberFormat.decimalPatternDigits(decimalDigits: 0).format(price).replaceAll(',', ' ')} ${XTexts.ruble}')
                   ],

@@ -5,6 +5,7 @@ import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
+import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 
 class TicketSearchBox extends StatelessWidget {
@@ -51,9 +52,9 @@ class TicketSearchBox extends StatelessWidget {
 
         // -- Left ICON Button -- Search
         if(showLeftSearchIcon)
-        Padding(
-          padding: const EdgeInsets.only(right: XSizes.md),
-          child: ImageIcon(Image.asset(XImages.searchGlass).image),
+        const Padding(
+          padding: EdgeInsets.only(right: XSizes.md),
+          child: Icon(CustomIcons.search_glass),
         ),
         // -- back
         if(showLeftBackButton)
@@ -86,9 +87,9 @@ class TicketSearchBox extends StatelessWidget {
                 onChanged: (String whereFrom) => searchProvider.saveToPrefs(whereFrom),             
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
-                  prefixIcon: showPrefixIcons ? Padding(
-                    padding: const EdgeInsets.only(bottom: 10, right: 25),
-                    child: ImageIcon(Image.asset(XImages.flight).image),
+                  prefixIcon: showPrefixIcons ? const Padding(
+                    padding: EdgeInsets.only(bottom: 10, right: 25),
+                    child: Icon(CustomIcons.flight,size: XSizes.iconMd,),
                   ) : null,
                   // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
@@ -135,9 +136,9 @@ class TicketSearchBox extends StatelessWidget {
                                 
                 style: Theme.of(context).textTheme.titleMedium,
                 decoration: InputDecoration(
-                 prefixIcon: showPrefixIcons ? Padding(
-                    padding: const EdgeInsets.only(bottom: 10, right: 25),
-                    child: ImageIcon(Image.asset(XImages.searchGlass).image),
+                 prefixIcon: showPrefixIcons ? const Padding(
+                    padding: EdgeInsets.only(bottom: 10, right: 25),
+                    child: Icon(CustomIcons.search_glass,size: XSizes.iconMd,),
                   ) : null,
                   // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,

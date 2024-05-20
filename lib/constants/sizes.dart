@@ -17,4 +17,9 @@ class XSizes {
   static const double defaultRadius = 15.0;
   static const double radiusSm = 10.0;
 
+  // Icon Size
+  static const double iconSm = 20.0;
+  static const double iconMd = 28.0;
+  static const double iconLg = 35.0;
+
 }
