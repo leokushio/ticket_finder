@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
 
     final searchProvider = Provider.of<SearchProvider>(context);
     searchProvider.initializePrefs();
-    final PageController pageController = PageController();
 
     final pages = [
       subScreens[searchProvider.subScreenIndex],

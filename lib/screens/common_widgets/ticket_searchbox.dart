@@ -73,6 +73,7 @@ class TicketSearchBox extends StatelessWidget {
               // -- Where From ----------------------------------------
               TextFormField(   
                 controller: searchProvider.whereFromController, 
+                textCapitalization: TextCapitalization.words,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   final RegExp russian = RegExp(r'^[\u0400-\u04FF]+');
@@ -111,7 +112,7 @@ class TicketSearchBox extends StatelessWidget {
                 autofocus: autoFocus,
                 readOnly: readOnly,
                 focusNode: searchProvider.whereToFocusNode,
-                
+                textCapitalization: TextCapitalization.words,
                 onTap: onTap, 
                 onEditingComplete: () {
                   if(onEditingComplete) {
