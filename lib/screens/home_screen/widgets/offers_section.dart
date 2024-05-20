@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
-import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/api_provider.dart';
+import 'package:ticket_finder/x_custom_icons_icons.dart';
 
 class OffersSection extends StatelessWidget {
   const OffersSection({
@@ -49,7 +48,7 @@ class OffersSection extends StatelessWidget {
                 const SizedBox(height: XSizes.spaceBtwItems,),
                 Row(
                   children: [
-                    Icon(CustomIcons.plane_nav),
+                    const Icon(XCustomIcons.plane_nav),
                     // Text(price.length > 3? ' ${price[0]} ${price.substring(1)} ${XTexts.ruble}'),
                     Text('${NumberFormat.decimalPatternDigits(decimalDigits: 0).format(price).replaceAll(',', ' ')} ${XTexts.ruble}')
                   ],

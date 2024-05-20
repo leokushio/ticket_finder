@@ -7,6 +7,7 @@ import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
+import 'package:ticket_finder/x_custom_icons_icons.dart';
 
 class ItemsGrid extends StatelessWidget {
   const ItemsGrid({
@@ -21,7 +22,7 @@ class ItemsGrid extends StatelessWidget {
     const Icon(Icons.keyboard_command_key, size: XSizes.xl),
     const Icon(Icons.language, size: XSizes.xl),
     const Icon(Icons.calendar_month, size: XSizes.xl),
-    const Icon(CustomIcons.fire, size: XSizes.iconMd),
+    const Icon(XCustomIcons.fire, size: XSizes.iconMd),
   ];
 
     return GridView.builder(

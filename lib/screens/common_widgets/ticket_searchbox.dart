@@ -7,6 +7,7 @@ import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
 import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
+import 'package:ticket_finder/x_custom_icons_icons.dart';
 
 class TicketSearchBox extends StatelessWidget {
   TicketSearchBox({
@@ -54,7 +55,7 @@ class TicketSearchBox extends StatelessWidget {
         if(showLeftSearchIcon)
         const Padding(
           padding: EdgeInsets.only(right: XSizes.md),
-          child: Icon(CustomIcons.search_glass),
+          child: Icon(XCustomIcons.search),
         ),
         // -- back
         if(showLeftBackButton)
@@ -89,7 +90,7 @@ class TicketSearchBox extends StatelessWidget {
                 decoration: InputDecoration(
                   prefixIcon: showPrefixIcons ? const Padding(
                     padding: EdgeInsets.only(bottom: 10, right: 25),
-                    child: Icon(CustomIcons.flight,size: XSizes.iconMd,),
+                    child: Icon(XCustomIcons.flight,size: XSizes.iconMd,),
                   ) : null,
                   // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,
@@ -98,7 +99,7 @@ class TicketSearchBox extends StatelessWidget {
                   contentPadding: const EdgeInsets.all(5),
                    suffixIcon: showSurfixSwapIcon ? IconButton(
                     onPressed: () => context.read<SearchProvider>().swapDestination(), 
-                    icon: const Icon(CustomIcons.swap,size: XSizes.iconMd,),
+                    icon: const Icon(XCustomIcons.swap,size: XSizes.iconMd,),
                                      
                     )
                     : null,
@@ -136,7 +137,7 @@ class TicketSearchBox extends StatelessWidget {
                 decoration: InputDecoration(
                  prefixIcon: showPrefixIcons ? const Padding(
                     padding: EdgeInsets.only(bottom: 10, right: 25),
-                    child: Icon(CustomIcons.search_glass,size: XSizes.iconMd,),
+                    child: Icon(XCustomIcons.search,size: XSizes.iconMd,),
                   ) : null,
                   // prefixIconConstraints: BoxConstraints.tight(const Size(30, 15)),
                   isDense: true,

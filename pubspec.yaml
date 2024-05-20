@@ -43,6 +43,6 @@ flutter:
           weight: 700
         - asset: assets/fonts/SF-Pro-Display-Medium.otf
         - asset: assets/fonts/SF-Pro-Display-Regular.otf
-    - family: CustomIcons
+    - family: XCustomIcons
       fonts: 
-        - asset: assets/icons/CustomIcons.ttf
+        - asset: assets/icons/XCustomIcons.ttf

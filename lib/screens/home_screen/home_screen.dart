@@ -13,6 +13,7 @@ import 'package:ticket_finder/screens/empty_pages/subscriptions.dart';
 import 'package:ticket_finder/screens/home_screen/initial_screen.dart';
 import 'package:ticket_finder/screens/pick_country_screen/pick_country_screen.dart';
 import 'package:ticket_finder/screens/see_all_tickets_screen/see_all_tickets_screen.dart';
+import 'package:ticket_finder/x_custom_icons_icons.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,11 +56,11 @@ class HomeScreen extends StatelessWidget {
         selectedItemColor: Colors.blue,
         showUnselectedLabels: true,
         items: [
-          BottomNavigationBarItem(icon: Icon(CustomIcons.plane_nav, size: XSizes.lg,), label: 'АвиаБилеты'),
-          BottomNavigationBarItem(icon: Icon(Icons.bed, size: XSizes.lg,), label: 'Отели'),
-          BottomNavigationBarItem(icon: Icon(CustomIcons.discover_nav, size: XSizes.lg,), label: 'Короче'),
-          BottomNavigationBarItem(icon: Icon(CustomIcons.bell_nav, size: XSizes.lg,), label: 'Подписки'),
-          BottomNavigationBarItem(icon: Icon(CustomIcons.profile_nav, size: XSizes.lg,), label: 'Профиль'),
+          BottomNavigationBarItem(icon: Icon(XCustomIcons.plane_nav, size: XSizes.lg,), label: 'АвиаБилеты'),
+          BottomNavigationBarItem(icon: Icon(XCustomIcons.hotel_nav, size: XSizes.lg,), label: 'Отели'),
+          BottomNavigationBarItem(icon: Icon(XCustomIcons.discover, size: XSizes.lg,), label: 'Короче'),
+          BottomNavigationBarItem(icon: Icon(XCustomIcons.bell_nav, size: XSizes.lg,), label: 'Подписки'),
+          BottomNavigationBarItem(icon: Icon(XCustomIcons.profile, size: XSizes.lg,), label: 'Профиль'),
         ]
         ),
 
