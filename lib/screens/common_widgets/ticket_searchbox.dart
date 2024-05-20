@@ -98,11 +98,11 @@ class TicketSearchBox extends StatelessWidget {
                   contentPadding: const EdgeInsets.all(5),
                    suffixIcon: showSurfixSwapIcon ? IconButton(
                     onPressed: () => context.read<SearchProvider>().swapDestination(), 
-                    icon: const Icon(Icons.swap_vert),
-                  
+                    icon: const Icon(CustomIcons.swap,size: XSizes.iconMd,),
+                                     
                     )
                     : null,
-                    suffixIconConstraints: BoxConstraints.tight(const Size(30, 25)),          
+                    suffixIconConstraints: BoxConstraints.tight(const Size(40, 40)),          
                 ),
               ),          
               
@@ -119,9 +119,7 @@ class TicketSearchBox extends StatelessWidget {
                   if(onEditingComplete) {
                     context.read<SearchProvider>().goToPickCountryScreen();
                     Navigator.pop(context);
-                  }
-                  
-                  
+                  }                
                 },
                 controller: searchProvider.whereToController,
                 autovalidateMode: AutovalidateMode.always,
@@ -151,7 +149,7 @@ class TicketSearchBox extends StatelessWidget {
                   
                     )
                     : null,
-                    suffixIconConstraints: BoxConstraints.tight(const Size(30, 25)),
+                    suffixIconConstraints: BoxConstraints.tight(const Size(35, 25)),
                   
                 ),
               ),

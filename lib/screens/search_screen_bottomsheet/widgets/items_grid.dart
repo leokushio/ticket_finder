@@ -5,6 +5,7 @@ import 'package:ticket_finder/constants/colors.dart';
 import 'package:ticket_finder/constants/image_strings.dart';
 import 'package:ticket_finder/constants/sizes.dart';
 import 'package:ticket_finder/constants/text_strings.dart';
+import 'package:ticket_finder/custom_icons_icons.dart';
 import 'package:ticket_finder/providers/search_provider.dart';
 
 class ItemsGrid extends StatelessWidget {
@@ -17,10 +18,10 @@ class ItemsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final searchProvider = Provider.of<SearchProvider>(context);
     List gridIcons = [
-    Icon(Icons.keyboard_command_key, size: XSizes.xl),
-    Icon(Icons.language, size: XSizes.xl),
-    Icon(Icons.calendar_month, size: XSizes.xl),
-    ImageIcon(Image.asset(XImages.fire).image, size: XSizes.xl),
+    const Icon(Icons.keyboard_command_key, size: XSizes.xl),
+    const Icon(Icons.language, size: XSizes.xl),
+    const Icon(Icons.calendar_month, size: XSizes.xl),
+    const Icon(CustomIcons.fire, size: XSizes.iconMd),
   ];
 
     return GridView.builder(
